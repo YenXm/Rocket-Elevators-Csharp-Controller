@@ -1,5 +1,5 @@
-using System.Threading;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Commercial_Controller
 {
@@ -10,15 +10,14 @@ namespace Commercial_Controller
             string ID = _elevatorID;
             string status = "idle";
             int currentFloor = 1;
-            string direction = 'null'
-            Door door = new Door();
+            string direction = "";
+            Door door = new Door(_elevatorID);
             List<int> floorRequestsList = new List<int>();
             List<int> completedRequestsList = new List<int>();
         }
+
         public void move()
         {
-
         }
-        
     }
 }
