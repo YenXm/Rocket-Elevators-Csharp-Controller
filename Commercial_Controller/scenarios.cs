@@ -20,6 +20,7 @@ namespace Commercial_Controller
         public (Column, Elevator) scenario1()
         {
             Column column = battery.columnsList[1];
+            Console.WriteLine("test1");
 
             column.elevatorsList[0].currentFloor = 20;
             column.elevatorsList[0].direction = "down";
@@ -47,6 +48,7 @@ namespace Commercial_Controller
             column.elevatorsList[4].floorRequestsList.Add(2);
 
             (Column chosenColumn, Elevator chosenElevator) = battery.assignElevator(20, "up");
+            Console.WriteLine("test2");
             chosenColumn = moveAllElevators(chosenColumn);
             return (chosenColumn, chosenElevator);
         }

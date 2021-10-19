@@ -21,8 +21,9 @@ namespace Commercial_Controller.Tests
             (Column chosenColumn, Elevator chosenElevator) = scenarios.scenario1();
 
             Assert.AreEqual(chosenColumn.ID, expectedColumn.ID, "Wrong column selected, expected Column " + expectedColumn.ID + ", got Column " + chosenColumn.ID);
-
-            Assert.AreEqual(chosenElevator.ID, expectedElevator.ID, "Wrong elevator selected, expected Elevator " + expectedElevator.ID + ", got Elevator " + expectedElevator.ID);
+            System.Console.WriteLine("elevator list count " + chosenColumn.elevatorsList.Count);
+            System.Console.WriteLine(chosenElevator.currentFloor);
+            Assert.AreEqual(chosenElevator.ID, expectedElevator.ID, "Wrong elevator selected, expected Elevator " + expectedElevator.ID + ", got Elevator " + chosenElevator.ID);
 
             Assert.IsTrue(chosenElevator.completedRequestsList.Contains(userPosition), "No elevator was sent to pick up the user");
 
@@ -83,6 +84,11 @@ namespace Commercial_Controller.Tests
 
             for (int i = 0; i < columnUsed.elevatorsList.Count; i++)
             {
+                System.Console.WriteLine(columnUsed.elevatorsList.Count);
+                System.Console.WriteLine("columnUsed.elevatorsList[i].currentFloor");
+                System.Console.WriteLine(columnUsed.elevatorsList[i].currentFloor);
+                System.Console.WriteLine("expectedFinalPositions[i]");
+                System.Console.WriteLine(expectedFinalPositions[i]);
                 Assert.AreEqual(columnUsed.elevatorsList[i].currentFloor, expectedFinalPositions[i], "Elevator " + columnUsed.elevatorsList[i].ID + " didn't finish at the correct floor, expected " + expectedFinalPositions[i] + ", got " + columnUsed.elevatorsList[0].currentFloor);
             }
         }

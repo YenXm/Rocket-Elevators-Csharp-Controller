@@ -2,10 +2,13 @@ namespace Commercial_Controller
 {
     public class Door
     {
-        public Door(int _ID)
+        public int ID;
+        public string status;
+
+        public Door(int _ID, string _status)
         {
-            int ID = _ID;
-            string status = "closed";
+            this.ID = _ID;
+            this.status = _status;
         }
     }
 }
