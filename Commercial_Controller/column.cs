@@ -35,6 +35,7 @@ namespace Commercial_Controller
             this.elevatorsList = new List<Elevator>();
             this.callButtonsList = new List<CallButton>();
             this.servedFloorsList = _servedFloors;
+
             createElevators(_amountOfFloors, _amountOfElevators);
             createCallButton(_amountOfFloors, _isBasement);
         }
@@ -110,9 +111,6 @@ namespace Commercial_Controller
             Elevator bestElevator,
             int floor)
         {
-            Console.WriteLine("new elevator  " + newElevator.ID);
-            Console.WriteLine("scoreToCheck  " + scoreToCheck);
-            Console.WriteLine("floor : " + floor);
             if (scoreToCheck < bestScore)
             {
                 bestScore = scoreToCheck;
@@ -128,9 +126,6 @@ namespace Commercial_Controller
                     referenceGap = gap;
                 }
             }
-            Console.WriteLine("bestElevator ID : " + bestElevator.ID);
-            Console.WriteLine("bestScore : " + bestScore);
-            Console.WriteLine("referenceGap : " + referenceGap);
             return (bestElevator, bestScore, referenceGap);
         }
         
@@ -270,8 +265,6 @@ namespace Commercial_Controller
                     referenceGap = bestElevatorInformations.referenceGap;
                 }
             }
-            Console.WriteLine("elevator ID " + bestElevator.ID);
-            Console.WriteLine("elevator current floor " + bestElevator.currentFloor);
             return bestElevator;
         }
     }

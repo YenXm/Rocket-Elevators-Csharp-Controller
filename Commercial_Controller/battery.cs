@@ -60,7 +60,6 @@ namespace Commercial_Controller
                     true);
             this.columnsList.Add(column);
             columnID++;
-            Console.WriteLine(column.ID);
         }
 
         public void createColumns(int _amountOfColumns,
@@ -92,7 +91,6 @@ namespace Commercial_Controller
                     false);
                 this.columnsList.Add(column);
                 columnID++;
-                Console.WriteLine(column.ID);
             }
         }
         public void createFloorRequestButtons(int _amountOfFloors)
@@ -134,7 +132,6 @@ namespace Commercial_Controller
                     return column;
                 }
             }
-            Console.WriteLine("wrong place");
             return this.columnsList[0];
         }
 
