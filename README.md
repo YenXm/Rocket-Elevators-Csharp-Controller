@@ -1,5 +1,14 @@
 # Rocket-Elevators-Csharp-Controller
-This is the template to use for the C# commercial controller. In the Commercial_Controller folder, you will find the classes that should be used along with some methods described in the requirements. The necessary files to run some tests are also included, in the Commercial_Controller.Tests folder.
+This program use OOP to create its structure.  
+                                       Battery -> Columns, Floor Requests Buttons
+                                           ///Column -> Elevators, Call Requests buttons
+                                               ///Elevator -> Door
+
+A scenario work by initializing a battery then, for the column it will test, it will manually change the current floor, floor requests list, direction and status of its elevator to simulate a set of elevator already working. After that, it will then launch a new request to the battery and expect the battery to pass it to the previously mentionned column and the column to pass it to the right elevator based on its algorithm. In the end it will then activate all the elevator and wait for the return of the chosen elevator and the chosen column to send to the tester.
+
+The tester will then evaluate the state (not the attribute status) of the column and assert that all its elevator are where they should be if the algorithm was working properly.
+
+
 
 ### Installation
 
@@ -27,6 +36,3 @@ which should give something like:
 
 ![Screenshot from 2021-06-15 18-00-52](https://user-images.githubusercontent.com/28630658/122129140-a8f84a00-ce03-11eb-8807-33d7eab8c387.png)
 
-Make sure to only edit files in the Commercial_Controller folder. The test and scenarios files can be left in your final project. The grader will run tests similar to the ones provided.
-
-Of course, make sure to edit this Readme file to describe your own project!
